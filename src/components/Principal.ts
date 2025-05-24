@@ -7,8 +7,6 @@ export class Principal {
         public img: string,
         public alt: string,
         public background?: Background,
-
-
     ) { }
 
     renderHTML() {

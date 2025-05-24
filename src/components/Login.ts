@@ -2,10 +2,16 @@ import { Button } from "./Button";
 
 export class Login {
     constructor(
-        title: string,
-        email: string,
-        password: string,
-        text: string,
-        button?: Button
+        public title: string,
+        public email: string,
+        public password: string,
+        public text: string,
+        public button?: Button
     ) { }
+
+    renderHTML() {
+        return document.body.innerHTML = `
+        
+        `
+     }
 }
