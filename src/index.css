@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+
+@theme{
+    --font-fredoka: "Fredoka", sans-serif;
+    --font-coiny: "Coiny", system-ui;
+}
+
+
+
+/* Agregador por windsurf 
+Promp: hacer que cuando le de click, no cuando sea hover se haga el desvanecimiento
+de aqui*/
+.active {
+  animation: fade-out 1s;
+  animation-fill-mode: forwards; 
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  
+}
+/* hasta aqui el desvanecimiento */
