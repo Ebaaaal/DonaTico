@@ -14,6 +14,10 @@ import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
 import { Route as RegisterImport } from './routes/Register'
 import { Route as LoginImport } from './routes/Login'
+import { Route as HomePageImport } from './routes/HomePage'
+import { Route as FooterImport } from './routes/Footer'
+import { Route as DonationImport } from './routes/Donation'
+import { Route as CreateDonationImport } from './routes/CreateDonation'
 import { Route as ContainerImport } from './routes/Container'
 import { Route as IndexImport } from './routes/index'
 
@@ -34,6 +38,30 @@ const RegisterRoute = RegisterImport.update({
 const LoginRoute = LoginImport.update({
   id: '/Login',
   path: '/Login',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const HomePageRoute = HomePageImport.update({
+  id: '/HomePage',
+  path: '/HomePage',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const FooterRoute = FooterImport.update({
+  id: '/Footer',
+  path: '/Footer',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DonationRoute = DonationImport.update({
+  id: '/Donation',
+  path: '/Donation',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CreateDonationRoute = CreateDonationImport.update({
+  id: '/CreateDonation',
+  path: '/CreateDonation',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -67,6 +95,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContainerImport
       parentRoute: typeof rootRoute
     }
+    '/CreateDonation': {
+      id: '/CreateDonation'
+      path: '/CreateDonation'
+      fullPath: '/CreateDonation'
+      preLoaderRoute: typeof CreateDonationImport
+      parentRoute: typeof rootRoute
+    }
+    '/Donation': {
+      id: '/Donation'
+      path: '/Donation'
+      fullPath: '/Donation'
+      preLoaderRoute: typeof DonationImport
+      parentRoute: typeof rootRoute
+    }
+    '/Footer': {
+      id: '/Footer'
+      path: '/Footer'
+      fullPath: '/Footer'
+      preLoaderRoute: typeof FooterImport
+      parentRoute: typeof rootRoute
+    }
+    '/HomePage': {
+      id: '/HomePage'
+      path: '/HomePage'
+      fullPath: '/HomePage'
+      preLoaderRoute: typeof HomePageImport
+      parentRoute: typeof rootRoute
+    }
     '/Login': {
       id: '/Login'
       path: '/Login'
@@ -96,6 +152,10 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/Container': typeof ContainerRoute
+  '/CreateDonation': typeof CreateDonationRoute
+  '/Donation': typeof DonationRoute
+  '/Footer': typeof FooterRoute
+  '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
@@ -104,6 +164,10 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/Container': typeof ContainerRoute
+  '/CreateDonation': typeof CreateDonationRoute
+  '/Donation': typeof DonationRoute
+  '/Footer': typeof FooterRoute
+  '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
@@ -113,6 +177,10 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/Container': typeof ContainerRoute
+  '/CreateDonation': typeof CreateDonationRoute
+  '/Donation': typeof DonationRoute
+  '/Footer': typeof FooterRoute
+  '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
@@ -120,16 +188,48 @@ export interface FileRoutesById {
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/Container' | '/Login' | '/Register' | '/about'
+  fullPaths:
+    | '/'
+    | '/Container'
+    | '/CreateDonation'
+    | '/Donation'
+    | '/Footer'
+    | '/HomePage'
+    | '/Login'
+    | '/Register'
+    | '/about'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/Container' | '/Login' | '/Register' | '/about'
-  id: '__root__' | '/' | '/Container' | '/Login' | '/Register' | '/about'
+  to:
+    | '/'
+    | '/Container'
+    | '/CreateDonation'
+    | '/Donation'
+    | '/Footer'
+    | '/HomePage'
+    | '/Login'
+    | '/Register'
+    | '/about'
+  id:
+    | '__root__'
+    | '/'
+    | '/Container'
+    | '/CreateDonation'
+    | '/Donation'
+    | '/Footer'
+    | '/HomePage'
+    | '/Login'
+    | '/Register'
+    | '/about'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContainerRoute: typeof ContainerRoute
+  CreateDonationRoute: typeof CreateDonationRoute
+  DonationRoute: typeof DonationRoute
+  FooterRoute: typeof FooterRoute
+  HomePageRoute: typeof HomePageRoute
   LoginRoute: typeof LoginRoute
   RegisterRoute: typeof RegisterRoute
   AboutRoute: typeof AboutRoute
@@ -138,6 +238,10 @@ export interface RootRouteChildren {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContainerRoute: ContainerRoute,
+  CreateDonationRoute: CreateDonationRoute,
+  DonationRoute: DonationRoute,
+  FooterRoute: FooterRoute,
+  HomePageRoute: HomePageRoute,
   LoginRoute: LoginRoute,
   RegisterRoute: RegisterRoute,
   AboutRoute: AboutRoute,
@@ -155,6 +259,10 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/Container",
+        "/CreateDonation",
+        "/Donation",
+        "/Footer",
+        "/HomePage",
         "/Login",
         "/Register",
         "/about"
@@ -165,6 +273,18 @@ export const routeTree = rootRoute
     },
     "/Container": {
       "filePath": "Container.tsx"
+    },
+    "/CreateDonation": {
+      "filePath": "CreateDonation.tsx"
+    },
+    "/Donation": {
+      "filePath": "Donation.tsx"
+    },
+    "/Footer": {
+      "filePath": "Footer.tsx"
+    },
+    "/HomePage": {
+      "filePath": "HomePage.tsx"
     },
     "/Login": {
       "filePath": "Login.tsx"
