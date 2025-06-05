@@ -18,7 +18,6 @@ import { Route as HomePageImport } from './routes/HomePage'
 import { Route as FooterImport } from './routes/Footer'
 import { Route as DonationImport } from './routes/Donation'
 import { Route as CreateDonationImport } from './routes/CreateDonation'
-import { Route as ContainerImport } from './routes/Container'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -65,12 +64,6 @@ const CreateDonationRoute = CreateDonationImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const ContainerRoute = ContainerImport.update({
-  id: '/Container',
-  path: '/Container',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
@@ -86,13 +79,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/Container': {
-      id: '/Container'
-      path: '/Container'
-      fullPath: '/Container'
-      preLoaderRoute: typeof ContainerImport
       parentRoute: typeof rootRoute
     }
     '/CreateDonation': {
@@ -151,7 +137,6 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/Container': typeof ContainerRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Donation': typeof DonationRoute
   '/Footer': typeof FooterRoute
@@ -163,7 +148,6 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/Container': typeof ContainerRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Donation': typeof DonationRoute
   '/Footer': typeof FooterRoute
@@ -176,7 +160,6 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/Container': typeof ContainerRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Donation': typeof DonationRoute
   '/Footer': typeof FooterRoute
@@ -190,7 +173,6 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/Container'
     | '/CreateDonation'
     | '/Donation'
     | '/Footer'
@@ -201,7 +183,6 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/Container'
     | '/CreateDonation'
     | '/Donation'
     | '/Footer'
@@ -212,7 +193,6 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
-    | '/Container'
     | '/CreateDonation'
     | '/Donation'
     | '/Footer'
@@ -225,7 +205,6 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ContainerRoute: typeof ContainerRoute
   CreateDonationRoute: typeof CreateDonationRoute
   DonationRoute: typeof DonationRoute
   FooterRoute: typeof FooterRoute
@@ -237,7 +216,6 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ContainerRoute: ContainerRoute,
   CreateDonationRoute: CreateDonationRoute,
   DonationRoute: DonationRoute,
   FooterRoute: FooterRoute,
@@ -258,7 +236,6 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/Container",
         "/CreateDonation",
         "/Donation",
         "/Footer",
@@ -270,9 +247,6 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
-    },
-    "/Container": {
-      "filePath": "Container.tsx"
     },
     "/CreateDonation": {
       "filePath": "CreateDonation.tsx"
