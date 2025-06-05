@@ -1,6 +1,6 @@
 
 import type { Container } from 'react-dom/client';
-import  Header  from './Header.tsx';
+//import  Header  from './Header.tsx';
 import  Section  from './Section.tsx';
 
 import typeReact from 'react'
