@@ -11,15 +11,15 @@ const btnHeader = (
 )
 const headerProps = {
   title: 'DonáTico',
-  img: './src/assets/perezoso.svg',
+  img: 'perezoso.svg',
   alt: 'perezoso',
   text: 'Ayuda a tu patria!',
   button: btnHeader
 }
 
 const sectionProps = {
-  images: ['./src/assets/desastres.svg', './src/assets/caridad.svg', './src/assets/comunidad.svg', './src/assets/animales.svg', './src/assets/medico.svg'],
-  images2: ['./src/assets/artistico.svg', './src/assets/deporte.svg', './src/assets/ambiental.svg', './src/assets/educacion.svg'],
+  images: ['desastres.svg', 'caridad.svg', 'comunidad.svg', 'animales.svg', 'medico.svg'],
+  images2: ['artistico.svg', 'deporte.svg', 'ambiental.svg', 'educacion.svg'],
   links: ['/Login', '/Login', '/Login', '/Login', '/'],
   links2: ['/Register', '/Register', '/', '/']
 }

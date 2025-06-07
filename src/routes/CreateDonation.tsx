@@ -26,7 +26,7 @@ function RouteComponent() {
     <CreateDonation
       btnBack={buttonBack}
       title='Create Donation'
-      img='/src/assets/img.png'
+      img='img.png'
       alt='img'
       donationTitle='Donation Title'
       description='Description'
