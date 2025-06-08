@@ -17,7 +17,7 @@ export default function Navigation() {
                     <img src="bell.svg" alt="Notification" className='w-10 h-10 ' />
                 </Link>
 
-                <Link to="/"  >
+                <Link to="/Perfil"  >
                     <img src="user.svg" alt="profile" className='w-10 h-10 ' />
                 </Link>
 

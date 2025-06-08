@@ -13,6 +13,7 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
 import { Route as RegisterImport } from './routes/Register'
+import { Route as PerfilImport } from './routes/Perfil'
 import { Route as NotificationsImport } from './routes/Notifications'
 import { Route as LoginImport } from './routes/Login'
 import { Route as HomePageImport } from './routes/HomePage'
@@ -31,6 +32,12 @@ const AboutRoute = AboutImport.update({
 const RegisterRoute = RegisterImport.update({
   id: '/Register',
   path: '/Register',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PerfilRoute = PerfilImport.update({
+  id: '/Perfil',
+  path: '/Perfil',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -116,6 +123,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotificationsImport
       parentRoute: typeof rootRoute
     }
+    '/Perfil': {
+      id: '/Perfil'
+      path: '/Perfil'
+      fullPath: '/Perfil'
+      preLoaderRoute: typeof PerfilImport
+      parentRoute: typeof rootRoute
+    }
     '/Register': {
       id: '/Register'
       path: '/Register'
@@ -142,6 +156,7 @@ export interface FileRoutesByFullPath {
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Notifications': typeof NotificationsRoute
+  '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
 }
@@ -153,6 +168,7 @@ export interface FileRoutesByTo {
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Notifications': typeof NotificationsRoute
+  '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
 }
@@ -165,6 +181,7 @@ export interface FileRoutesById {
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Notifications': typeof NotificationsRoute
+  '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
 }
@@ -178,6 +195,7 @@ export interface FileRouteTypes {
     | '/HomePage'
     | '/Login'
     | '/Notifications'
+    | '/Perfil'
     | '/Register'
     | '/about'
   fileRoutesByTo: FileRoutesByTo
@@ -188,6 +206,7 @@ export interface FileRouteTypes {
     | '/HomePage'
     | '/Login'
     | '/Notifications'
+    | '/Perfil'
     | '/Register'
     | '/about'
   id:
@@ -198,6 +217,7 @@ export interface FileRouteTypes {
     | '/HomePage'
     | '/Login'
     | '/Notifications'
+    | '/Perfil'
     | '/Register'
     | '/about'
   fileRoutesById: FileRoutesById
@@ -210,6 +230,7 @@ export interface RootRouteChildren {
   HomePageRoute: typeof HomePageRoute
   LoginRoute: typeof LoginRoute
   NotificationsRoute: typeof NotificationsRoute
+  PerfilRoute: typeof PerfilRoute
   RegisterRoute: typeof RegisterRoute
   AboutRoute: typeof AboutRoute
 }
@@ -221,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomePageRoute: HomePageRoute,
   LoginRoute: LoginRoute,
   NotificationsRoute: NotificationsRoute,
+  PerfilRoute: PerfilRoute,
   RegisterRoute: RegisterRoute,
   AboutRoute: AboutRoute,
 }
@@ -241,6 +263,7 @@ export const routeTree = rootRoute
         "/HomePage",
         "/Login",
         "/Notifications",
+        "/Perfil",
         "/Register",
         "/about"
       ]
@@ -262,6 +285,9 @@ export const routeTree = rootRoute
     },
     "/Notifications": {
       "filePath": "Notifications.tsx"
+    },
+    "/Perfil": {
+      "filePath": "Perfil.tsx"
     },
     "/Register": {
       "filePath": "Register.tsx"
