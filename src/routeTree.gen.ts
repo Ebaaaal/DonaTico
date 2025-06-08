@@ -13,9 +13,9 @@
 import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
 import { Route as RegisterImport } from './routes/Register'
+import { Route as NotificationsImport } from './routes/Notifications'
 import { Route as LoginImport } from './routes/Login'
 import { Route as HomePageImport } from './routes/HomePage'
-import { Route as FooterImport } from './routes/Footer'
 import { Route as DonationImport } from './routes/Donation'
 import { Route as CreateDonationImport } from './routes/CreateDonation'
 import { Route as IndexImport } from './routes/index'
@@ -34,6 +34,12 @@ const RegisterRoute = RegisterImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const NotificationsRoute = NotificationsImport.update({
+  id: '/Notifications',
+  path: '/Notifications',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const LoginRoute = LoginImport.update({
   id: '/Login',
   path: '/Login',
@@ -43,12 +49,6 @@ const LoginRoute = LoginImport.update({
 const HomePageRoute = HomePageImport.update({
   id: '/HomePage',
   path: '/HomePage',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const FooterRoute = FooterImport.update({
-  id: '/Footer',
-  path: '/Footer',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -95,13 +95,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DonationImport
       parentRoute: typeof rootRoute
     }
-    '/Footer': {
-      id: '/Footer'
-      path: '/Footer'
-      fullPath: '/Footer'
-      preLoaderRoute: typeof FooterImport
-      parentRoute: typeof rootRoute
-    }
     '/HomePage': {
       id: '/HomePage'
       path: '/HomePage'
@@ -114,6 +107,13 @@ declare module '@tanstack/react-router' {
       path: '/Login'
       fullPath: '/Login'
       preLoaderRoute: typeof LoginImport
+      parentRoute: typeof rootRoute
+    }
+    '/Notifications': {
+      id: '/Notifications'
+      path: '/Notifications'
+      fullPath: '/Notifications'
+      preLoaderRoute: typeof NotificationsImport
       parentRoute: typeof rootRoute
     }
     '/Register': {
@@ -139,9 +139,9 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Donation': typeof DonationRoute
-  '/Footer': typeof FooterRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
+  '/Notifications': typeof NotificationsRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
 }
@@ -150,9 +150,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Donation': typeof DonationRoute
-  '/Footer': typeof FooterRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
+  '/Notifications': typeof NotificationsRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
 }
@@ -162,9 +162,9 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Donation': typeof DonationRoute
-  '/Footer': typeof FooterRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
+  '/Notifications': typeof NotificationsRoute
   '/Register': typeof RegisterRoute
   '/about': typeof AboutRoute
 }
@@ -175,9 +175,9 @@ export interface FileRouteTypes {
     | '/'
     | '/CreateDonation'
     | '/Donation'
-    | '/Footer'
     | '/HomePage'
     | '/Login'
+    | '/Notifications'
     | '/Register'
     | '/about'
   fileRoutesByTo: FileRoutesByTo
@@ -185,9 +185,9 @@ export interface FileRouteTypes {
     | '/'
     | '/CreateDonation'
     | '/Donation'
-    | '/Footer'
     | '/HomePage'
     | '/Login'
+    | '/Notifications'
     | '/Register'
     | '/about'
   id:
@@ -195,9 +195,9 @@ export interface FileRouteTypes {
     | '/'
     | '/CreateDonation'
     | '/Donation'
-    | '/Footer'
     | '/HomePage'
     | '/Login'
+    | '/Notifications'
     | '/Register'
     | '/about'
   fileRoutesById: FileRoutesById
@@ -207,9 +207,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CreateDonationRoute: typeof CreateDonationRoute
   DonationRoute: typeof DonationRoute
-  FooterRoute: typeof FooterRoute
   HomePageRoute: typeof HomePageRoute
   LoginRoute: typeof LoginRoute
+  NotificationsRoute: typeof NotificationsRoute
   RegisterRoute: typeof RegisterRoute
   AboutRoute: typeof AboutRoute
 }
@@ -218,9 +218,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CreateDonationRoute: CreateDonationRoute,
   DonationRoute: DonationRoute,
-  FooterRoute: FooterRoute,
   HomePageRoute: HomePageRoute,
   LoginRoute: LoginRoute,
+  NotificationsRoute: NotificationsRoute,
   RegisterRoute: RegisterRoute,
   AboutRoute: AboutRoute,
 }
@@ -238,9 +238,9 @@ export const routeTree = rootRoute
         "/",
         "/CreateDonation",
         "/Donation",
-        "/Footer",
         "/HomePage",
         "/Login",
+        "/Notifications",
         "/Register",
         "/about"
       ]
@@ -254,14 +254,14 @@ export const routeTree = rootRoute
     "/Donation": {
       "filePath": "Donation.tsx"
     },
-    "/Footer": {
-      "filePath": "Footer.tsx"
-    },
     "/HomePage": {
       "filePath": "HomePage.tsx"
     },
     "/Login": {
       "filePath": "Login.tsx"
+    },
+    "/Notifications": {
+      "filePath": "Notifications.tsx"
     },
     "/Register": {
       "filePath": "Register.tsx"
