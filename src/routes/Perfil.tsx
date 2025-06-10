@@ -10,14 +10,14 @@ export const Route = createFileRoute('/Perfil')({
 const buttonBack = (
   
     <Button text='<'
-    style='text-black text-2xl font-regular hover:cursor-pointer hover:scale-110 duration-400  ' 
+    style='text-black text-2xl font-regular hover:cursor-pointer hover:scale-120 duration-400  ' 
     link='/' />
  
 );
 
 const btnEdit = (
-    <Button text='Edit Profile'
-    style=' text-xs p-5' 
+    <Button text='Edit Profile '
+    style=' text-2xl p-5 cursor-pointer' 
     link='/' />
 );
 

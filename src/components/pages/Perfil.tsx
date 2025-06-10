@@ -34,21 +34,21 @@ export default function CreateDonation(props: PerfilProps) {
         <h4>{props.email}</h4>
         {props.btnEdit}
 
-<div className="flex flex-col gap-5 pt-5 w-3/4">
-  <div className="flex items-center gap-4 hover:scale-105 duration-300">
-    <img src="heart-icon.svg" alt="Donation" className="w-5 h-5 text-green-800" />
+<div className="flex flex-col gap-5 pt-5 w-4/7">
+  <div className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
+    <img src="heart.svg" alt="Donation" className="w-15 h-15 text-green-800" />
     <h3 className="text-lg">{props.donation}</h3>
   </div>
-  <div className="flex items-center gap-4 hover:scale-105 duration-300">
-    <img src="belll-icon.svg" alt="Notifications" className="w-5 h-5 text-green-800" />
+  <div className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
+    <img src="belll.svg" alt="Notifications" className="w-15 h-15 text-green-800" />
     <h3 className="text-lg">{props.notifications}</h3>
   </div>
-  <div className="flex items-center gap-4 hover:scale-105 duration-300">
-    <img src="key-icon.svg" alt="Change Password" className="w-5 h-5 text-green-800" />
+  <div className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
+    <img src="key.svg" alt="Change Password" className="w-15 h-15 text-green-800" />
     <h3 className="text-lg">{props.changePassword}</h3>
   </div>
-  <div className="flex items-center gap-4 hover:scale-105 duration-300">
-    <img src="Configuration-icon.svg" alt="Settings" className="w-5 h-5 text-green-800" />
+  <div className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
+    <img src="Configuration.svg" alt="Settings" className="w-15 h-15 text-green-800" />
     <h3 className="text-lg">{props.setting}</h3>
   </div>
 </div>
