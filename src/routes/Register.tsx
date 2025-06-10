@@ -7,7 +7,7 @@ import Button from '../components/Button'
 const btnRegister = (
   <Button text='Sign Up' 
   style='text-white bg-green-900 duration-400 hover:cursor-pointer hover:scale-110 hover:bg-green-950 rounded-xl py-2 min-md:py-4 text-center'
-  link='/Container' />
+  link='/HomePage' />
 )
  
 
