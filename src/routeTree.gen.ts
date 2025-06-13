@@ -15,11 +15,15 @@ import { Route as AboutImport } from './routes/about'
 import { Route as RegisterImport } from './routes/Register'
 import { Route as PerfilImport } from './routes/Perfil'
 import { Route as NotificationsImport } from './routes/Notifications'
+import { Route as MedicalImport } from './routes/Medical'
 import { Route as LoginImport } from './routes/Login'
 import { Route as HomePageImport } from './routes/HomePage'
 import { Route as DisasterImport } from './routes/Disaster'
 import { Route as DetailsImport } from './routes/Details'
 import { Route as CreateDonationImport } from './routes/CreateDonation'
+import { Route as CommunityImport } from './routes/Community'
+import { Route as CharityImport } from './routes/Charity'
+import { Route as AnimalsImport } from './routes/Animals'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -45,6 +49,12 @@ const PerfilRoute = PerfilImport.update({
 const NotificationsRoute = NotificationsImport.update({
   id: '/Notifications',
   path: '/Notifications',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const MedicalRoute = MedicalImport.update({
+  id: '/Medical',
+  path: '/Medical',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -78,6 +88,24 @@ const CreateDonationRoute = CreateDonationImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const CommunityRoute = CommunityImport.update({
+  id: '/Community',
+  path: '/Community',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const CharityRoute = CharityImport.update({
+  id: '/Charity',
+  path: '/Charity',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AnimalsRoute = AnimalsImport.update({
+  id: '/Animals',
+  path: '/Animals',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const IndexRoute = IndexImport.update({
   id: '/',
   path: '/',
@@ -93,6 +121,27 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexImport
+      parentRoute: typeof rootRoute
+    }
+    '/Animals': {
+      id: '/Animals'
+      path: '/Animals'
+      fullPath: '/Animals'
+      preLoaderRoute: typeof AnimalsImport
+      parentRoute: typeof rootRoute
+    }
+    '/Charity': {
+      id: '/Charity'
+      path: '/Charity'
+      fullPath: '/Charity'
+      preLoaderRoute: typeof CharityImport
+      parentRoute: typeof rootRoute
+    }
+    '/Community': {
+      id: '/Community'
+      path: '/Community'
+      fullPath: '/Community'
+      preLoaderRoute: typeof CommunityImport
       parentRoute: typeof rootRoute
     }
     '/CreateDonation': {
@@ -130,6 +179,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginImport
       parentRoute: typeof rootRoute
     }
+    '/Medical': {
+      id: '/Medical'
+      path: '/Medical'
+      fullPath: '/Medical'
+      preLoaderRoute: typeof MedicalImport
+      parentRoute: typeof rootRoute
+    }
     '/Notifications': {
       id: '/Notifications'
       path: '/Notifications'
@@ -165,11 +221,15 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/Animals': typeof AnimalsRoute
+  '/Charity': typeof CharityRoute
+  '/Community': typeof CommunityRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Details': typeof DetailsRoute
   '/Disaster': typeof DisasterRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
+  '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
@@ -178,11 +238,15 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/Animals': typeof AnimalsRoute
+  '/Charity': typeof CharityRoute
+  '/Community': typeof CommunityRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Details': typeof DetailsRoute
   '/Disaster': typeof DisasterRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
+  '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
@@ -192,11 +256,15 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/Animals': typeof AnimalsRoute
+  '/Charity': typeof CharityRoute
+  '/Community': typeof CommunityRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Details': typeof DetailsRoute
   '/Disaster': typeof DisasterRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
+  '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
@@ -207,11 +275,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/Animals'
+    | '/Charity'
+    | '/Community'
     | '/CreateDonation'
     | '/Details'
     | '/Disaster'
     | '/HomePage'
     | '/Login'
+    | '/Medical'
     | '/Notifications'
     | '/Perfil'
     | '/Register'
@@ -219,11 +291,15 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/Animals'
+    | '/Charity'
+    | '/Community'
     | '/CreateDonation'
     | '/Details'
     | '/Disaster'
     | '/HomePage'
     | '/Login'
+    | '/Medical'
     | '/Notifications'
     | '/Perfil'
     | '/Register'
@@ -231,11 +307,15 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/Animals'
+    | '/Charity'
+    | '/Community'
     | '/CreateDonation'
     | '/Details'
     | '/Disaster'
     | '/HomePage'
     | '/Login'
+    | '/Medical'
     | '/Notifications'
     | '/Perfil'
     | '/Register'
@@ -245,11 +325,15 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnimalsRoute: typeof AnimalsRoute
+  CharityRoute: typeof CharityRoute
+  CommunityRoute: typeof CommunityRoute
   CreateDonationRoute: typeof CreateDonationRoute
   DetailsRoute: typeof DetailsRoute
   DisasterRoute: typeof DisasterRoute
   HomePageRoute: typeof HomePageRoute
   LoginRoute: typeof LoginRoute
+  MedicalRoute: typeof MedicalRoute
   NotificationsRoute: typeof NotificationsRoute
   PerfilRoute: typeof PerfilRoute
   RegisterRoute: typeof RegisterRoute
@@ -258,11 +342,15 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnimalsRoute: AnimalsRoute,
+  CharityRoute: CharityRoute,
+  CommunityRoute: CommunityRoute,
   CreateDonationRoute: CreateDonationRoute,
   DetailsRoute: DetailsRoute,
   DisasterRoute: DisasterRoute,
   HomePageRoute: HomePageRoute,
   LoginRoute: LoginRoute,
+  MedicalRoute: MedicalRoute,
   NotificationsRoute: NotificationsRoute,
   PerfilRoute: PerfilRoute,
   RegisterRoute: RegisterRoute,
@@ -280,11 +368,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/Animals",
+        "/Charity",
+        "/Community",
         "/CreateDonation",
         "/Details",
         "/Disaster",
         "/HomePage",
         "/Login",
+        "/Medical",
         "/Notifications",
         "/Perfil",
         "/Register",
@@ -293,6 +385,15 @@ export const routeTree = rootRoute
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/Animals": {
+      "filePath": "Animals.tsx"
+    },
+    "/Charity": {
+      "filePath": "Charity.tsx"
+    },
+    "/Community": {
+      "filePath": "Community.tsx"
     },
     "/CreateDonation": {
       "filePath": "CreateDonation.tsx"
@@ -308,6 +409,9 @@ export const routeTree = rootRoute
     },
     "/Login": {
       "filePath": "Login.tsx"
+    },
+    "/Medical": {
+      "filePath": "Medical.tsx"
     },
     "/Notifications": {
       "filePath": "Notifications.tsx"

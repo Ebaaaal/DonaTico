@@ -20,7 +20,7 @@ const headerProps = {
 const sectionProps = {
   images: ['desastres.svg', 'caridad.svg', 'comunidad.svg', 'animales.svg', 'medico.svg'],
   images2: ['artistico.svg', 'deporte.svg', 'ambiental.svg', 'educacion.svg'],
-  links: ['/Login', '/Login', '/Login', '/Login', '/'],
+  links: ['/Disaster', '/Charity', '/Community', '/Animals', '/Medical'],
   links2: ['/Register', '/Register', '/', '/']
 }
 

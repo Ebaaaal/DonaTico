@@ -4,7 +4,7 @@ import Disaster from '../components/pages/Disaster'
 import Button from '../components/Button'
 
 
-export const Route = createFileRoute('/Disaster')({
+export const Route = createFileRoute('/Community')({
   component: RouteComponent,
 })
 
@@ -12,17 +12,17 @@ const campaignData = [
   {
     image: 'campaign-image.svg',
     organizer: 'Organizer 1',
-    heading: 'Food for Families',
-    details: 'Ayuda a familias necesitadas',
-    progress: 50, 
+    heading: 'Streets ',
+    details: 'Ayuda a mejorar la calle',
+    progress: 35, 
    link: <a href="/Details" className="text-green-800 underline">Know More</a>,
   },
   {
     image: 'campaign-image.svg',
     organizer: 'Organizer 2',
-    heading: 'Disaster Relief',
+    heading: 'park manitenance',
     details: 'Aenean commodo ligula eget dolor...',
-    progress: 15, 
+    progress: 45, 
     link: <a href="/Details" className="text-green-800 underline">Know More</a>,
   },
 ];
@@ -30,7 +30,7 @@ const campaignData = [
 const buttonBack = (
     <Button text='<'
     style='text-black text-2xl font-regular hover:cursor-pointer hover:scale-110 duration-400  ' 
-    link='/' />
+    link='/HomePage' />
 )
 
 const buttonInfo = (
@@ -40,13 +40,11 @@ const buttonInfo = (
 )
 
 function RouteComponent() {
-  return (
-    <Disaster
-       btnBack={buttonBack}
-      title='Disasters'
-      btnInfo={buttonInfo}
-      searchPlaceholder='Search for a disaster...'
-      campaign={campaignData}
-    ></Disaster>
-  )
+  return <Disaster
+    btnBack={buttonBack}
+    title='Community'
+    btnInfo={buttonInfo}
+    searchPlaceholder='Search for a disaster...'
+    campaign={campaignData}
+  ></Disaster>
 }

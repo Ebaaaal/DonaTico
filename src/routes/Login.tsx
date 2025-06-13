@@ -10,7 +10,7 @@ export const Route = createFileRoute('/Login')({
 const button = (
   
     <Button text='Log In'
-    style='text-white text-center bg-green-900 duration-400 hover:cursor-pointer hover:scale-110 hover:bg-green-950 rounded-xl py-2  min-md:py-4'
+    style='text-white text-center bg-green-900 duration-400 hover:cursor-pointer hover:scale-110 hover:bg-green-950 rounded-xl py-2 min-md:py-4'
     link='/HomePage' />
  
 )
