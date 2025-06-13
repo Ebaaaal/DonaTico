@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Outlet, createRootRoute, useLocation } from '@tanstack/react-router'
 import Navigation from '../components/Navigation'
 
+
 //import  Navigation from '../components/Navigation'
 
 export const Route = createRootRoute({
