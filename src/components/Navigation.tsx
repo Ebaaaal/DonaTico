@@ -9,7 +9,7 @@ export default function Navigation() {
                     <img src="home.svg" alt="home" className='w-10 h-10' />
                 </Link>
 
-                <Link to="/Disaster"  >
+                <Link to="/CreateDonation"  >
                     <img src="donate.svg" alt="Donation" className='w-10 h-10' />
                 </Link>
 

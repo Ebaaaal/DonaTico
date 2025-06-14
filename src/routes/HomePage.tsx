@@ -21,7 +21,7 @@ const sectionProps = {
   images: ['desastres.svg', 'caridad.svg', 'comunidad.svg', 'animales.svg', 'medico.svg'],
   images2: ['artistico.svg', 'deporte.svg', 'ambiental.svg', 'educacion.svg'],
   links: ['/Disaster', '/Charity', '/Community', '/Animals', '/Medical'],
-  links2: ['/Register', '/Register', '/', '/']
+  links2: ['/Artistic', '/Sport', '/Environmental', '/Education']
 }
 
 const targetsProps = {

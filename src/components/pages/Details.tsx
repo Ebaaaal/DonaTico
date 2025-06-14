@@ -19,7 +19,7 @@ export default function Details(props: DetailsProps) {
 
 
   return (
-    <section className='px-8 py-10'>
+    <section className='px-8 pt-10 pb-20'>
       <div className="flex flex-col justify-center items-center text-green-900 font-fredoka  ">
         <div className="flex justify-center items-center pb-10">
           <h1 className="flex mr-8 gap-x-20 text-3xl font-regular text-black pl-12">

@@ -4,11 +4,11 @@ import { useState } from 'react'
 import Category from '../components/pages/Category'
 import Button from '../components/Button'
 
-export const Route = createFileRoute('/Charity')({
-  component: CharityPage,
+export const Route = createFileRoute('/Sport')({
+  component: SportPage,
 })
 
-function CharityPage() {
+function SportPage() {
   const [showInfo, setShowInfo] = useState(false)
 
   const buttonBack = (
@@ -29,7 +29,7 @@ function CharityPage() {
   )
 
   const campaigns = [
-     {
+      {
       image: 'campaign-image.svg',
       organizer: 'Red Cross',
       heading: 'Ayuda para inundaciones',
@@ -50,7 +50,7 @@ function CharityPage() {
     <div className="relative">
       <Category
         btnBack={buttonBack}
-        title="Charity"
+        title="Sport"
         btnInfo={buttonInfo}
         searchPlaceholder="Buscar por..."
         campaign={campaigns}
@@ -61,15 +61,18 @@ function CharityPage() {
           <div className="bg-white w-11/12 max-w-md p-6 rounded-lg shadow-lg border border-green-400 text-green-800 relative">
             <h2 className="text-lg font-bold mb-2">¿Qué significa esta categoría?</h2>
             <p className="text-sm">
-              Este tipo de proyectos están destinados a brindar apoyo humanitario a personas en situación de vulnerabilidad o necesidad urgente.
+           Los proyectos deportivos buscan fomentar la actividad física, la inclusión y el desarrollo de talentos.
 Incluyen:
 
             </p>
             <ul className="list-disc list-inside text-sm mt-5 flex flex-col gap-3">
-              <li>Donaciones a orfanatos o asilos</li>
-              <li>Recolección de fondos para familias necesitadas</li>
-              <li>Ayuda a personas sin hogar</li>
-              <li>Ayuda a personas en situación de vulnerabilidad</li>
+              <li>Escuelas y equipos deportivos comunitarios</li>
+              <li>Eventos deportivos benéficos</li>
+              <li>Apoyo a atletas en formación</li>
+              <li>Construcción o mejora de instalaciones deportivas</li>
+              <li>Recreación deportiva</li>
+              <li>Desarrollo de habilidades deportivas</li>
+              <li>Apoyo para giras deportivas</li>
             </ul>
             <button
               onClick={() => setShowInfo(false)}

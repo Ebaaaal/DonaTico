@@ -4,11 +4,11 @@ import { useState } from 'react'
 import Category from '../components/pages/Category'
 import Button from '../components/Button'
 
-export const Route = createFileRoute('/Charity')({
-  component: CharityPage,
+export const Route = createFileRoute('/Environmental')({
+  component: EcologicalPage,
 })
 
-function CharityPage() {
+function EcologicalPage() {
   const [showInfo, setShowInfo] = useState(false)
 
   const buttonBack = (
@@ -50,7 +50,7 @@ function CharityPage() {
     <div className="relative">
       <Category
         btnBack={buttonBack}
-        title="Charity"
+        title="Ecological"
         btnInfo={buttonInfo}
         searchPlaceholder="Buscar por..."
         campaign={campaigns}
@@ -61,15 +61,19 @@ function CharityPage() {
           <div className="bg-white w-11/12 max-w-md p-6 rounded-lg shadow-lg border border-green-400 text-green-800 relative">
             <h2 className="text-lg font-bold mb-2">¿Qué significa esta categoría?</h2>
             <p className="text-sm">
-              Este tipo de proyectos están destinados a brindar apoyo humanitario a personas en situación de vulnerabilidad o necesidad urgente.
+           Esta categoría reúne campañas enfocadas en la protección del medio ambiente y la sostenibilidad.
 Incluyen:
 
             </p>
             <ul className="list-disc list-inside text-sm mt-5 flex flex-col gap-3">
-              <li>Donaciones a orfanatos o asilos</li>
-              <li>Recolección de fondos para familias necesitadas</li>
-              <li>Ayuda a personas sin hogar</li>
-              <li>Ayuda a personas en situación de vulnerabilidad</li>
+              <li>Reforestación y limpieza de ríos</li>
+              <li>Educación ambiental</li>
+              <li>Protección de áreas naturales</li>
+              <li>Energías renovables y reciclaje</li>
+              <li>Campañas de voluntariado</li>
+              <li>Campañas de reforestación</li>
+              <li>Proyectos de conservación ambiental</li>
+              <li>Campañas de recaudacion de fondos</li>
             </ul>
             <button
               onClick={() => setShowInfo(false)}

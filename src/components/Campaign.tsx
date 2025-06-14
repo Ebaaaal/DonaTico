@@ -13,7 +13,7 @@ export default function Campaign(props: CampaignProps) {
     console.log("Progreso recibido:", props.progress);
 
   return (
-    <div className="border-1 border-gray-300 rounded-2xl p-2">
+    <div className="border-1 border-gray-300 rounded-2xl p-5">
       <img src={props.image} alt="campaign" className="rounded-xl mb-2 w-full " />
       <p className="text-xs text-center text-gray-500">{ props.organizer}</p>
       <h3 className="text-center font-bold text-green-900">{props.heading}</h3>

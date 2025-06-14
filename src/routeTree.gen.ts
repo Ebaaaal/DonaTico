@@ -12,17 +12,21 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as AboutImport } from './routes/about'
+import { Route as SportImport } from './routes/Sport'
 import { Route as RegisterImport } from './routes/Register'
 import { Route as PerfilImport } from './routes/Perfil'
 import { Route as NotificationsImport } from './routes/Notifications'
 import { Route as MedicalImport } from './routes/Medical'
 import { Route as LoginImport } from './routes/Login'
 import { Route as HomePageImport } from './routes/HomePage'
+import { Route as EnvironmentalImport } from './routes/Environmental'
+import { Route as EducationImport } from './routes/Education'
 import { Route as DisasterImport } from './routes/Disaster'
 import { Route as DetailsImport } from './routes/Details'
 import { Route as CreateDonationImport } from './routes/CreateDonation'
 import { Route as CommunityImport } from './routes/Community'
 import { Route as CharityImport } from './routes/Charity'
+import { Route as ArtisticImport } from './routes/Artistic'
 import { Route as AnimalsImport } from './routes/Animals'
 import { Route as IndexImport } from './routes/index'
 
@@ -31,6 +35,12 @@ import { Route as IndexImport } from './routes/index'
 const AboutRoute = AboutImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SportRoute = SportImport.update({
+  id: '/Sport',
+  path: '/Sport',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -70,6 +80,18 @@ const HomePageRoute = HomePageImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const EnvironmentalRoute = EnvironmentalImport.update({
+  id: '/Environmental',
+  path: '/Environmental',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const EducationRoute = EducationImport.update({
+  id: '/Education',
+  path: '/Education',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const DisasterRoute = DisasterImport.update({
   id: '/Disaster',
   path: '/Disaster',
@@ -97,6 +119,12 @@ const CommunityRoute = CommunityImport.update({
 const CharityRoute = CharityImport.update({
   id: '/Charity',
   path: '/Charity',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ArtisticRoute = ArtisticImport.update({
+  id: '/Artistic',
+  path: '/Artistic',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -128,6 +156,13 @@ declare module '@tanstack/react-router' {
       path: '/Animals'
       fullPath: '/Animals'
       preLoaderRoute: typeof AnimalsImport
+      parentRoute: typeof rootRoute
+    }
+    '/Artistic': {
+      id: '/Artistic'
+      path: '/Artistic'
+      fullPath: '/Artistic'
+      preLoaderRoute: typeof ArtisticImport
       parentRoute: typeof rootRoute
     }
     '/Charity': {
@@ -163,6 +198,20 @@ declare module '@tanstack/react-router' {
       path: '/Disaster'
       fullPath: '/Disaster'
       preLoaderRoute: typeof DisasterImport
+      parentRoute: typeof rootRoute
+    }
+    '/Education': {
+      id: '/Education'
+      path: '/Education'
+      fullPath: '/Education'
+      preLoaderRoute: typeof EducationImport
+      parentRoute: typeof rootRoute
+    }
+    '/Environmental': {
+      id: '/Environmental'
+      path: '/Environmental'
+      fullPath: '/Environmental'
+      preLoaderRoute: typeof EnvironmentalImport
       parentRoute: typeof rootRoute
     }
     '/HomePage': {
@@ -207,6 +256,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RegisterImport
       parentRoute: typeof rootRoute
     }
+    '/Sport': {
+      id: '/Sport'
+      path: '/Sport'
+      fullPath: '/Sport'
+      preLoaderRoute: typeof SportImport
+      parentRoute: typeof rootRoute
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -222,34 +278,42 @@ declare module '@tanstack/react-router' {
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/Animals': typeof AnimalsRoute
+  '/Artistic': typeof ArtisticRoute
   '/Charity': typeof CharityRoute
   '/Community': typeof CommunityRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Details': typeof DetailsRoute
   '/Disaster': typeof DisasterRoute
+  '/Education': typeof EducationRoute
+  '/Environmental': typeof EnvironmentalRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
+  '/Sport': typeof SportRoute
   '/about': typeof AboutRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/Animals': typeof AnimalsRoute
+  '/Artistic': typeof ArtisticRoute
   '/Charity': typeof CharityRoute
   '/Community': typeof CommunityRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Details': typeof DetailsRoute
   '/Disaster': typeof DisasterRoute
+  '/Education': typeof EducationRoute
+  '/Environmental': typeof EnvironmentalRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
+  '/Sport': typeof SportRoute
   '/about': typeof AboutRoute
 }
 
@@ -257,17 +321,21 @@ export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
   '/Animals': typeof AnimalsRoute
+  '/Artistic': typeof ArtisticRoute
   '/Charity': typeof CharityRoute
   '/Community': typeof CommunityRoute
   '/CreateDonation': typeof CreateDonationRoute
   '/Details': typeof DetailsRoute
   '/Disaster': typeof DisasterRoute
+  '/Education': typeof EducationRoute
+  '/Environmental': typeof EnvironmentalRoute
   '/HomePage': typeof HomePageRoute
   '/Login': typeof LoginRoute
   '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
+  '/Sport': typeof SportRoute
   '/about': typeof AboutRoute
 }
 
@@ -276,49 +344,61 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/Animals'
+    | '/Artistic'
     | '/Charity'
     | '/Community'
     | '/CreateDonation'
     | '/Details'
     | '/Disaster'
+    | '/Education'
+    | '/Environmental'
     | '/HomePage'
     | '/Login'
     | '/Medical'
     | '/Notifications'
     | '/Perfil'
     | '/Register'
+    | '/Sport'
     | '/about'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/Animals'
+    | '/Artistic'
     | '/Charity'
     | '/Community'
     | '/CreateDonation'
     | '/Details'
     | '/Disaster'
+    | '/Education'
+    | '/Environmental'
     | '/HomePage'
     | '/Login'
     | '/Medical'
     | '/Notifications'
     | '/Perfil'
     | '/Register'
+    | '/Sport'
     | '/about'
   id:
     | '__root__'
     | '/'
     | '/Animals'
+    | '/Artistic'
     | '/Charity'
     | '/Community'
     | '/CreateDonation'
     | '/Details'
     | '/Disaster'
+    | '/Education'
+    | '/Environmental'
     | '/HomePage'
     | '/Login'
     | '/Medical'
     | '/Notifications'
     | '/Perfil'
     | '/Register'
+    | '/Sport'
     | '/about'
   fileRoutesById: FileRoutesById
 }
@@ -326,34 +406,42 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnimalsRoute: typeof AnimalsRoute
+  ArtisticRoute: typeof ArtisticRoute
   CharityRoute: typeof CharityRoute
   CommunityRoute: typeof CommunityRoute
   CreateDonationRoute: typeof CreateDonationRoute
   DetailsRoute: typeof DetailsRoute
   DisasterRoute: typeof DisasterRoute
+  EducationRoute: typeof EducationRoute
+  EnvironmentalRoute: typeof EnvironmentalRoute
   HomePageRoute: typeof HomePageRoute
   LoginRoute: typeof LoginRoute
   MedicalRoute: typeof MedicalRoute
   NotificationsRoute: typeof NotificationsRoute
   PerfilRoute: typeof PerfilRoute
   RegisterRoute: typeof RegisterRoute
+  SportRoute: typeof SportRoute
   AboutRoute: typeof AboutRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnimalsRoute: AnimalsRoute,
+  ArtisticRoute: ArtisticRoute,
   CharityRoute: CharityRoute,
   CommunityRoute: CommunityRoute,
   CreateDonationRoute: CreateDonationRoute,
   DetailsRoute: DetailsRoute,
   DisasterRoute: DisasterRoute,
+  EducationRoute: EducationRoute,
+  EnvironmentalRoute: EnvironmentalRoute,
   HomePageRoute: HomePageRoute,
   LoginRoute: LoginRoute,
   MedicalRoute: MedicalRoute,
   NotificationsRoute: NotificationsRoute,
   PerfilRoute: PerfilRoute,
   RegisterRoute: RegisterRoute,
+  SportRoute: SportRoute,
   AboutRoute: AboutRoute,
 }
 
@@ -369,17 +457,21 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/Animals",
+        "/Artistic",
         "/Charity",
         "/Community",
         "/CreateDonation",
         "/Details",
         "/Disaster",
+        "/Education",
+        "/Environmental",
         "/HomePage",
         "/Login",
         "/Medical",
         "/Notifications",
         "/Perfil",
         "/Register",
+        "/Sport",
         "/about"
       ]
     },
@@ -388,6 +480,9 @@ export const routeTree = rootRoute
     },
     "/Animals": {
       "filePath": "Animals.tsx"
+    },
+    "/Artistic": {
+      "filePath": "Artistic.tsx"
     },
     "/Charity": {
       "filePath": "Charity.tsx"
@@ -403,6 +498,12 @@ export const routeTree = rootRoute
     },
     "/Disaster": {
       "filePath": "Disaster.tsx"
+    },
+    "/Education": {
+      "filePath": "Education.tsx"
+    },
+    "/Environmental": {
+      "filePath": "Environmental.tsx"
     },
     "/HomePage": {
       "filePath": "HomePage.tsx"
@@ -421,6 +522,9 @@ export const routeTree = rootRoute
     },
     "/Register": {
       "filePath": "Register.tsx"
+    },
+    "/Sport": {
+      "filePath": "Sport.tsx"
     },
     "/about": {
       "filePath": "about.tsx"
