@@ -15,6 +15,7 @@ import { Route as AboutImport } from './routes/about'
 import { Route as SportImport } from './routes/Sport'
 import { Route as RegisterImport } from './routes/Register'
 import { Route as PerfilImport } from './routes/Perfil'
+import { Route as PaymentImport } from './routes/Payment'
 import { Route as NotificationsImport } from './routes/Notifications'
 import { Route as MedicalImport } from './routes/Medical'
 import { Route as LoginImport } from './routes/Login'
@@ -53,6 +54,12 @@ const RegisterRoute = RegisterImport.update({
 const PerfilRoute = PerfilImport.update({
   id: '/Perfil',
   path: '/Perfil',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const PaymentRoute = PaymentImport.update({
+  id: '/Payment',
+  path: '/Payment',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -242,6 +249,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotificationsImport
       parentRoute: typeof rootRoute
     }
+    '/Payment': {
+      id: '/Payment'
+      path: '/Payment'
+      fullPath: '/Payment'
+      preLoaderRoute: typeof PaymentImport
+      parentRoute: typeof rootRoute
+    }
     '/Perfil': {
       id: '/Perfil'
       path: '/Perfil'
@@ -290,6 +304,7 @@ export interface FileRoutesByFullPath {
   '/Login': typeof LoginRoute
   '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
+  '/Payment': typeof PaymentRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
   '/Sport': typeof SportRoute
@@ -311,6 +326,7 @@ export interface FileRoutesByTo {
   '/Login': typeof LoginRoute
   '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
+  '/Payment': typeof PaymentRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
   '/Sport': typeof SportRoute
@@ -333,6 +349,7 @@ export interface FileRoutesById {
   '/Login': typeof LoginRoute
   '/Medical': typeof MedicalRoute
   '/Notifications': typeof NotificationsRoute
+  '/Payment': typeof PaymentRoute
   '/Perfil': typeof PerfilRoute
   '/Register': typeof RegisterRoute
   '/Sport': typeof SportRoute
@@ -356,6 +373,7 @@ export interface FileRouteTypes {
     | '/Login'
     | '/Medical'
     | '/Notifications'
+    | '/Payment'
     | '/Perfil'
     | '/Register'
     | '/Sport'
@@ -376,6 +394,7 @@ export interface FileRouteTypes {
     | '/Login'
     | '/Medical'
     | '/Notifications'
+    | '/Payment'
     | '/Perfil'
     | '/Register'
     | '/Sport'
@@ -396,6 +415,7 @@ export interface FileRouteTypes {
     | '/Login'
     | '/Medical'
     | '/Notifications'
+    | '/Payment'
     | '/Perfil'
     | '/Register'
     | '/Sport'
@@ -418,6 +438,7 @@ export interface RootRouteChildren {
   LoginRoute: typeof LoginRoute
   MedicalRoute: typeof MedicalRoute
   NotificationsRoute: typeof NotificationsRoute
+  PaymentRoute: typeof PaymentRoute
   PerfilRoute: typeof PerfilRoute
   RegisterRoute: typeof RegisterRoute
   SportRoute: typeof SportRoute
@@ -439,6 +460,7 @@ const rootRouteChildren: RootRouteChildren = {
   LoginRoute: LoginRoute,
   MedicalRoute: MedicalRoute,
   NotificationsRoute: NotificationsRoute,
+  PaymentRoute: PaymentRoute,
   PerfilRoute: PerfilRoute,
   RegisterRoute: RegisterRoute,
   SportRoute: SportRoute,
@@ -469,6 +491,7 @@ export const routeTree = rootRoute
         "/Login",
         "/Medical",
         "/Notifications",
+        "/Payment",
         "/Perfil",
         "/Register",
         "/Sport",
@@ -516,6 +539,9 @@ export const routeTree = rootRoute
     },
     "/Notifications": {
       "filePath": "Notifications.tsx"
+    },
+    "/Payment": {
+      "filePath": "Payment.tsx"
     },
     "/Perfil": {
       "filePath": "Perfil.tsx"

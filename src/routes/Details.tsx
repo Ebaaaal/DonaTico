@@ -22,7 +22,7 @@ const buttonDonate = (
   
     <Button text='Donate'
     style=' item-center justify-center text-white text-center  bg-green-900 duration-400 hover:cursor-pointer hover:scale-110 hover:bg-green-950 rounded-xl py-2 px-33'
-    link='/' />
+    link='/Payment' />
  
 )
 
