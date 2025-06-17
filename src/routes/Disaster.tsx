@@ -29,21 +29,22 @@ function DisasterPage() {
   )
 
   const campaigns = [
-     {
+    {
       image: 'campaign-image.svg',
       organizer: 'Red Cross',
       heading: 'Ayuda para inundaciones',
       details: 'Apoyo a familias afectadas por lluvias fuertes.',
       progress: 45,
-     link: <a href="/Details" className="text-green-800 underline">Know More</a>,
+      link: '/Details',
     },
-    {   image: 'campaign-image.svg',
-    organizer: 'Organizer 2',
-    heading: 'animal food',
-    details: 'Aenean commodo ligula eget dolor...',
-    progress: 23,
-    link: <a href="/Details" className="text-green-800 underline">Know More</a>,
-  },
+    {
+      image: 'campaign-image.svg',
+      organizer: 'Organizer 2',
+      heading: 'animal food',
+      details: 'Aenean commodo ligula eget dolor...',
+      progress: 23,
+      link: '/Details',
+    },
   ]
 
   return (
