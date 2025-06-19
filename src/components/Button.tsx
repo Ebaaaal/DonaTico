@@ -7,19 +7,19 @@ interface ButtonProps {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export default function Button({ text, style, link, onClick }: ButtonProps) {
-  if (link) {
+export default function Button(props: ButtonProps) {
+  if (props.link) {
     return (
-      <Link to={link} className={style}>
-        <button className="cursor-pointer">{text}</button>
+      <Link to={props.link} className={props.style}>
+        <button className="cursor-pointer">{props.text}</button>
       </Link>
     )
   }
 
   // Si no hay link, renderiza solo el botón interactivo
   return (
-    <button onClick={onClick} className={style}>
-      {text}
+    <button onClick={props.onClick} className={props.style}>
+      {props.text}
     </button>
   )
 }

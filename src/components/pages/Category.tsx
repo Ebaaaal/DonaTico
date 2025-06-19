@@ -6,7 +6,7 @@ interface CampaignProps {
   organizer: string;
   heading: string;
   details: string;
-  link: React.ReactNode;
+  link: string;
   progress: number;
 }
 

@@ -26,23 +26,22 @@ export default function Register(props: RegisterProps) {
                 <form className="flex flex-col gap-1 w-3/4 min-md:gap-3 min-md:text-3xl min-md:w-2/3" method='POST'>
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.name}</label>
-                    <input type="name" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300  min-md:mb-15" />
+                    <input type="name" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min-md:mb-15" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.email}</label>
-                    <input type="email" className="border-b-3 mb-8 outline-none hover:scale-105 duration-300  min-md:mb-15" />
+                    <input type="email" className="border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min-md:mb-15" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.phone}</label>
-                    <input type="phone" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 min-md:mb-15" />
+                    <input type="number" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min-md:mb-15" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.address}</label>
-                    <input type="text" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 min min-md:mb-15" />
-
+                    <input type="text" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min min-md:mb-15" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.password}</label>
-                    <input type="password" className=" border-b-3 outline-none mb-8 hover:scale-105 duration-300  min-md:mb-20" />
+                    <input type="password" className=" border-b-3 outline-none mb-8 hover:scale-105 duration-300 pl-12 min-md:mb-20" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.confirmPassword}</label>
-                    <input type="password" className=" border-b-3 outline-none mb-8 hover:scale-105 duration-300  min-md:mb-20" />
+                    <input type="password" className=" border-b-3 outline-none mb-8 hover:scale-105 duration-300 pl-12 min-md:mb-20" />
 
                     {props.button ? props.button : ''}
                     <div className="flex gap-4 justify-center">
