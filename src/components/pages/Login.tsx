@@ -13,7 +13,7 @@ interface LoginProps {
 
 
 export default function Login(props: LoginProps) {
-    const showPassword = props.buttonPasswordReveal?.props.showPassword === false;
+    const showPassword = props.buttonPasswordReveal?.props.showPassword;
 
     return (
         <section>
@@ -26,7 +26,7 @@ export default function Login(props: LoginProps) {
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.password}</label>
                     <div className='relative '>
-                        <input type={showPassword ? "text" : "password"} className=" border-b-3 duration-400 hover:scale-110 outline-none mb-8 pl-12 w-full" />
+                        <input type={showPassword ? "password" : "text"} className=" border-b-3 duration-400 hover:scale-110 outline-none mb-8 pl-12 w-full" />
                         {props.buttonPasswordReveal ? props.buttonPasswordReveal : ''}
                     </div>
 

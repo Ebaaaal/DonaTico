@@ -33,7 +33,7 @@ export default function Register(props: RegisterProps) {
     }
 
     return (
-        <section className='flex flex-col justify-center items-center min-h-dvh gap-6'>
+        <section className='flex flex-col justify-center items-center min-h-dvh gap-6 min-md:my-25'>
             <div className="flex flex-col items-center w-3/4 text-green-900 gap-2 font-fredoka ">
                 <h1 className="text-4xl font-bold min-md:text-6xl mb-15">{props.title}</h1>
 

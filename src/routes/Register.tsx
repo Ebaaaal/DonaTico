@@ -16,8 +16,10 @@ function ButtonPasswordReveal({ showPassword, setShowPassword }: any) {
 
   return (
     <Button text=''
-      style={`absolute right-6 bottom-2/3 min-md:bottom-4/5 bg-[url('${img}')] bg-no-repeat hover:scale-120 duration-200 bg-center w-6 h-6`} //uso de windsurf para obtener una idea pero se modifico hasta dejarlo asi de una forma mas simplificada
-      onClick={() => { setShowPassword(!showPassword) }} />
+      style={`absolute right-6 bottom-2/3 min-md:bottom-4/5 hover:scale-120 duration-200 bg-center w-6 h-6`} //uso de windsurf para obtener una idea pero se modifico hasta dejarlo asi de una forma mas simplificada
+      onClick={() => { setShowPassword(!showPassword) }} 
+      img={`${img}`}/>
+      
   )
 }
 
