@@ -1,8 +1,7 @@
 @import "tailwindcss";
 
 
-@theme{
+@theme {
     --font-fredoka: "Fredoka", sans-serif;
     --font-coiny: "Coiny", system-ui;
 }
-
