@@ -17,7 +17,7 @@ const buttonCreate = (
 const buttonBack = (
   <Button text='<'
     style='text-black text-2xl font-regular hover:cursor-pointer hover:scale-110 duration-400  '
-    link='/' />
+    onClick={() => window.history.go(-1)} />
 )
 
 const categories = [

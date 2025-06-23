@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 export default function Navigation() {
     
     return (
-        <footer className="bg-black fixed bottom-0 w-full h-1/18 z-50">
+        <footer className="bg-gray-950 bottom-0 fixed w-full h-1/18 z-50">
             <nav className='flex justify-around items-center h-full'>
                 <Link to="/HomePage">
                     <img src="home.svg" alt="home" className='w-10 h-10' />

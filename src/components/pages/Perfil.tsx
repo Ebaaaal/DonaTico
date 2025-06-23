@@ -21,8 +21,8 @@ export default function CreateDonation(props: PerfilProps) {
 
 
   return (
-    <section className='py-10'>
-      <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 font-fredoka pb-8 ">
+    <section className=''>
+      <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 font-fredoka ">
         <div className="flex justify-center items-center w-full pb-10">
           <h1 className="flex justify-center items-center mr-8 gap-x-5 text-3xl font-regular min-md:text-3xl text-black">
             {props.btnBack}

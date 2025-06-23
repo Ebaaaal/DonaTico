@@ -22,7 +22,7 @@ export default function CreateDonation(props: CreateDonationProps) {
 
   return (
     <section>
-      <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 gap-10 font-fredoka min-md:gap-20 min-md:pb-25">
+      <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 gap-10 font-fredoka min-md:gap-20 min-md:pb-35 min-md:pt-15">
         <div className="flex justify-center items-center w-full">
           <h1 className="flex justify-center items-center mr-8 gap-x-5 text-3xl font-regular min-md:text-3xl text-black">
             {props.btnBack}
@@ -34,13 +34,13 @@ export default function CreateDonation(props: CreateDonationProps) {
 
         <div className="flex flex-col gap-1 w-3/4 min-md:gap-3 min-md:text-3xl min-md:w-2/3">
           <label className="font-semibold relative left-1/6 min-md:font-medium">{props.donationTitle}</label>
-          <input type="text" className="border-b-2 mb-8 outline-none hover:scale-105 duration-300 pl-12" />
+          <input type="text" className="border-b-2 mb-8 outline-none hover:scale-105 duration-300 px-8 min-md:px-28" />
 
           <label className="font-semibold relative left-1/6 min-md:font-medium">{props.description}</label>
-          <input type="text" className="border-b-2 outline-none mb-8 hover:scale-105 duration-300 pl-12" />
+          <input type="text" className="border-b-2 outline-none mb-8 hover:scale-105 duration-300 px-8 min-md:px-28" />
 
           <label className="font-semibold relative left-1/6 min-md:font-medium">{props.location}</label>
-          <input type="text" className="border-b-2 outline-none mb-8 hover:scale-105 duration-300 pl-12" />
+          <input type="text" className="border-b-2 outline-none mb-8 hover:scale-105 duration-300 px-8 min-md:px-28" />
 
 
           <label className="font-semibold relative left-1/6 min-md:font-medium ">{props.category}</label>
@@ -72,11 +72,10 @@ export default function CreateDonation(props: CreateDonationProps) {
 
           <label className="font-semibold relative left-1/6 min-md:font-medium">{props.amount}</label>
           <div className="relative hover:scale-105 duration-300">
-            <span className="absolute top-0 left-5">₡</span>
+            <span className="absolute top-0 left-4 min-md:left-20 ">₡</span>
             <input
               type="number"
-              pattern='[0-9]*'
-              className="border-b-2 outline-none mb-8 w-full pl-12"
+              className="border-b-2 outline-none mb-8 w-full px-8 min-md:px-28"
               min={0}
               onInput={(e) => {
                 const target = e.target as HTMLInputElement;

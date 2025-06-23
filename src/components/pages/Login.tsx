@@ -22,11 +22,11 @@ export default function Login(props: LoginProps) {
 
                 <form className="flex flex-col gap-1 w-3/4 min-md:gap-3 min-md:text-3xl min-md:w-2/3" method='POST'>
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.email}</label>
-                    <input type="email" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12" />
+                    <input type="email" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 px-8 min-md:px-28" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.password}</label>
                     <div className='relative '>
-                        <input type={showPassword ? "password" : "text"} className=" border-b-3 duration-400 hover:scale-110 outline-none mb-8 pl-12 w-full" />
+                        <input type={showPassword ? "password" : "text"} className=" border-b-3 duration-400 hover:scale-110 outline-none mb-8 px-8 min-md:px-28 w-full" />
                         {props.buttonPasswordReveal ? props.buttonPasswordReveal : ''}
                     </div>
 

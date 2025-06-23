@@ -8,10 +8,9 @@ export const Route = createFileRoute('/Perfil')({
 })
 
 const buttonBack = (
-  
     <Button text='<'
     style='text-black text-2xl font-regular hover:cursor-pointer hover:scale-120 duration-400  ' 
-    link='/' />
+    onClick={() => window.history.go(-1)} />
  
 );
 

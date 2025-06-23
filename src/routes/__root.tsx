@@ -19,9 +19,9 @@ function RootComponent() {
       <Outlet />
       
         {!hideFooter && (
-          <div className=''>
+          
           <Navigation />
-          </div>)}
+          )}
       
 
 

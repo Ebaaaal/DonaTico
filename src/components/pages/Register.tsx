@@ -40,22 +40,22 @@ export default function Register(props: RegisterProps) {
                 <form className="flex flex-col gap-1 w-full min-md:gap-3 min-md:text-3xl" method='POST'>
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.name}</label>
-                    <input type="name" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min-md:mb-15" />
+                    <input type="name" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 px-8 min-md:px-28 min-md:mb-15" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.email}</label>
-                    <input type="email" className="border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min-md:mb-15" />
+                    <input type="email" className="border-b-3 mb-8 outline-none hover:scale-105 duration-300 px-8 min-md:px-28 min-md:mb-15" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.phone}</label>
-                    <input type="number" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min-md:mb-15" />
+                    <input type="number" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 px-8 min-md:px-28 min-md:mb-15" />
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.address}</label>
-                    <input type="text" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 pl-12 min min-md:mb-15" />
+                    <input type="text" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 px-8 min-md:px-28 min min-md:mb-15" />
 
                     <label className='font-semibold relative left-1/6 min-md:font-medium'>{props.password}</label>
                     <div className='relative '>
                         <input
-                            type={showPassword ? "text" : "password"} className={`border-b-3 duration-400 hover:scale-110 outline-none mb-8 pl-12 w-full min-md:mb-20`}
-                            value={pass}
+                            type={showPassword ? "text" : "password"} className={`border-b-3 duration-400 hover:scale-110 outline-none mb-8 px-8 min-md:px-28 w-full min-md:mb-20`}
+                            value={pass || ''}
                             onChange={(e) => { setpass(e.target.value) }}
                         />
                         {props.buttonPasswordReveal ? props.buttonPasswordReveal : ''}
@@ -63,9 +63,9 @@ export default function Register(props: RegisterProps) {
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.confirmPassword}</label>
                     <div className='relative '>
-                        <p className='absolute right-0 text-red-600 animate-bounce max-md:text-sm bottom-10/9 '>{passwordMatch() ? '' : 'Password does not match'}</p>
+                        <p className='absolute left-0 bottom-3/2 text-red-600 animate-bounce max-md:text-sm '>{passwordMatch() ? '' : 'Password does not match'}</p>
                         <input
-                            type={showPasswordConfirm ? "text" : "password"} className={`border-b-3 duration-400 hover:scale-110 outline-none mb-8 pl-12 w-full min-md:mb-20`}
+                            type={showPasswordConfirm ? "text" : "password"} className={`border-b-3 duration-400 hover:scale-110 outline-none mb-8 px-8 min-md:px-28 w-full min-md:mb-20`}
                             value={passConfirm}
                             onChange={(e) => { setpassConfirm(e.target.value) }}
                         />
