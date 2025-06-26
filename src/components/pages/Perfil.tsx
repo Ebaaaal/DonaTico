@@ -13,7 +13,8 @@ interface PerfilProps {
   donation: string;
   notifications: string;
   changePassword: string;
-  setting: string
+  likes: string
+  logOut: string
 }
 
 
@@ -47,13 +48,18 @@ export default function CreateDonation(props: PerfilProps) {
           </Link>
 
           <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
-            <img src="key.svg" alt="Change Password" className="w-15 h-15 text-green-800" />
+            <img src="key2.svg" alt="Change Password" className="w-15 h-15 text-green-800" />
             <h3 className="text-lg">{props.changePassword}</h3>
           </Link>
 
           <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
             <img src="Configuration.svg" alt="Settings" className="w-15 h-15 text-green-800" />
-            <h3 className="text-lg">{props.setting}</h3>
+            <h3 className="text-lg">{props.likes}</h3>
+          </Link>
+
+          <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
+            <img src="LogOut.svg" alt="Settings" className="w-15 h-15 text-green-800" />
+            <h3 className="text-lg">{props.logOut}</h3>
           </Link>
         </div>
       </div>

@@ -20,6 +20,8 @@ export default function CreateDonation(props: CreateDonationProps) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [selectedType, setSelectedType] = useState('');
 
+  const [money, setMoney] = useState(true);
+
   return (
     <section>
       <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 gap-10 font-fredoka min-md:gap-20 min-md:pb-35 min-md:pt-15">
@@ -72,15 +74,18 @@ export default function CreateDonation(props: CreateDonationProps) {
 
           <label className="font-semibold relative left-1/6 min-md:font-medium">{props.amount}</label>
           <div className="relative hover:scale-105 duration-300">
-            <span className="absolute top-0 left-4 min-md:left-20 ">₡</span>
+            <span className={`absolute top-0 left-4 min-md:left-20 ${money ? 'hidden' : ''}`}>₡</span>
             <input
               type="number"
               className="border-b-2 outline-none mb-8 w-full px-8 min-md:px-28"
               min={0}
               onInput={(e) => {
-                const target = e.target as HTMLInputElement;
-                target.value = target.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
-              }}  //hecho con chatgpt, promp: como puedo hacer para que el input solo acepte numeros, sin puntos y que tampoco acepte la e?
+                const target = e.target as HTMLInputElement;// Remove non-numeric characters
+                target.value = target.value.replace(/[^0-9]/g, ''); //hecho con chatgpt, promp: como puedo hacer para que el input solo acepte numeros, sin puntos y que tampoco acepte la e?
+                if (target.value === '') return setMoney(true);
+                
+                setMoney(false);
+              }}
             />
           </div>
 

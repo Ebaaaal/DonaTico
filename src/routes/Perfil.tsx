@@ -8,15 +8,15 @@ export const Route = createFileRoute('/Perfil')({
 })
 
 const buttonBack = (
-    <Button text='<'
-    style='text-black text-2xl font-regular hover:cursor-pointer hover:scale-120 duration-400  ' 
+  <Button text='<'
+    style='text-black text-2xl font-regular hover:cursor-pointer hover:scale-120 duration-400  '
     onClick={() => window.history.go(-1)} />
- 
+
 );
 
 const btnEdit = (
-    <Button text='Edit Profile '
-    style=' text-2xl p-5 cursor-pointer' 
+  <Button text='Edit Profile '
+    style=' text-2xl p-5 cursor-pointer'
     link='/' />
 );
 
@@ -34,8 +34,8 @@ function RouteComponent() {
       donation='Donation'
       notifications='Notifications'
       changePassword='Change Password'
-      setting='Setting'
-
+      likes='Likes'
+      logOut='Log Out'
 
 
     ></Perfil>

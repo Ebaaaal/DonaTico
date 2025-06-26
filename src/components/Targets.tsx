@@ -2,6 +2,7 @@ interface TargetsProps {
     titles: string[];
     organizers: string[];
     texts: string[];
+    progress: number[];
     images: string[];
     alts: string[];
 }
@@ -19,7 +20,12 @@ export default function Targets(props: TargetsProps) {
                         <h1 className=" text-1xl font-semibold cursor-default"> {title} </h1>
                         <h3> {props.organizers[number]} </h3>
                         <p className=""> {props.texts[number]} </p>
-                        <progress className=" rounded-1xl w-4/5" value="75" max="100" ></progress>
+                        <div
+                            className=" bg-green-600 h-3 transition-all motion-safe:animate-progress duration-500 ease-in-out rounded-full "
+                            style={{
+                                width: `${Math.min(Math.max(Number(props.progress[number]), 0), 95)}%`,
+                            }}
+                        ></div>
                     </div>
 
                 </div>

@@ -25,6 +25,7 @@ interface TargetsProps {
     titles: string[];
     organizers: string[];
     texts: string[];
+    progress: number[];
     images: string[];
     alts: string[];
 }

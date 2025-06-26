@@ -28,6 +28,7 @@ const targetsProps = {
   titles: ['Desastres Naturales', 'Caridad'],
   organizers: ['Ebal Seemann', 'Zoe Kraft'],
   texts: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !'],
+  progress: [50, 100],
   images: ['desastres.svg', 'caridad.svg'],
   alts: ['desastres', 'caridad']
   
