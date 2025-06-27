@@ -11,6 +11,7 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as EditProfileImport } from './routes/editProfile'
 import { Route as AboutImport } from './routes/about'
 import { Route as SportImport } from './routes/Sport'
 import { Route as RegisterImport } from './routes/Register'
@@ -32,6 +33,12 @@ import { Route as AnimalsImport } from './routes/Animals'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const EditProfileRoute = EditProfileImport.update({
+  id: '/editProfile',
+  path: '/editProfile',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const AboutRoute = AboutImport.update({
   id: '/about',
@@ -284,6 +291,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutImport
       parentRoute: typeof rootRoute
     }
+    '/editProfile': {
+      id: '/editProfile'
+      path: '/editProfile'
+      fullPath: '/editProfile'
+      preLoaderRoute: typeof EditProfileImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -309,6 +323,7 @@ export interface FileRoutesByFullPath {
   '/Register': typeof RegisterRoute
   '/Sport': typeof SportRoute
   '/about': typeof AboutRoute
+  '/editProfile': typeof EditProfileRoute
 }
 
 export interface FileRoutesByTo {
@@ -331,6 +346,7 @@ export interface FileRoutesByTo {
   '/Register': typeof RegisterRoute
   '/Sport': typeof SportRoute
   '/about': typeof AboutRoute
+  '/editProfile': typeof EditProfileRoute
 }
 
 export interface FileRoutesById {
@@ -354,6 +370,7 @@ export interface FileRoutesById {
   '/Register': typeof RegisterRoute
   '/Sport': typeof SportRoute
   '/about': typeof AboutRoute
+  '/editProfile': typeof EditProfileRoute
 }
 
 export interface FileRouteTypes {
@@ -378,6 +395,7 @@ export interface FileRouteTypes {
     | '/Register'
     | '/Sport'
     | '/about'
+    | '/editProfile'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -399,6 +417,7 @@ export interface FileRouteTypes {
     | '/Register'
     | '/Sport'
     | '/about'
+    | '/editProfile'
   id:
     | '__root__'
     | '/'
@@ -420,6 +439,7 @@ export interface FileRouteTypes {
     | '/Register'
     | '/Sport'
     | '/about'
+    | '/editProfile'
   fileRoutesById: FileRoutesById
 }
 
@@ -443,6 +463,7 @@ export interface RootRouteChildren {
   RegisterRoute: typeof RegisterRoute
   SportRoute: typeof SportRoute
   AboutRoute: typeof AboutRoute
+  EditProfileRoute: typeof EditProfileRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -465,6 +486,7 @@ const rootRouteChildren: RootRouteChildren = {
   RegisterRoute: RegisterRoute,
   SportRoute: SportRoute,
   AboutRoute: AboutRoute,
+  EditProfileRoute: EditProfileRoute,
 }
 
 export const routeTree = rootRoute
@@ -495,7 +517,8 @@ export const routeTree = rootRoute
         "/Perfil",
         "/Register",
         "/Sport",
-        "/about"
+        "/about",
+        "/editProfile"
       ]
     },
     "/": {
@@ -554,6 +577,9 @@ export const routeTree = rootRoute
     },
     "/about": {
       "filePath": "about.tsx"
+    },
+    "/editProfile": {
+      "filePath": "editProfile.tsx"
     }
   }
 }

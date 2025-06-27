@@ -23,7 +23,7 @@ export default function CreateDonation(props: PerfilProps) {
 
   return (
     <section className=''>
-      <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 font-fredoka ">
+      <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 font-fredoka min-md:my-25 ">
         <div className="flex justify-center items-center w-full pb-10">
           <h1 className="flex justify-center items-center mr-8 gap-x-5 text-3xl font-regular min-md:text-3xl text-black">
             {props.btnBack}
@@ -50,12 +50,7 @@ export default function CreateDonation(props: PerfilProps) {
           <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
             <img src="key2.svg" alt="Change Password" className="w-15 h-15 text-green-800" />
             <h3 className="text-lg">{props.changePassword}</h3>
-          </Link>
-
-          <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
-            <img src="Configuration.svg" alt="Settings" className="w-15 h-15 text-green-800" />
-            <h3 className="text-lg">{props.likes}</h3>
-          </Link>
+          </Link>    
 
           <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
             <img src="LogOut.svg" alt="Settings" className="w-15 h-15 text-green-800" />

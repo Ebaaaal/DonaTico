@@ -17,7 +17,7 @@ const buttonBack = (
 const btnEdit = (
   <Button text='Edit Profile '
     style=' text-2xl p-5 cursor-pointer'
-    link='/' />
+    link='/editProfile' />
 );
 
 
@@ -31,7 +31,7 @@ function RouteComponent() {
       name='Name'
       email='Email Address'
       btnEdit={btnEdit}
-      donation='Donation'
+      donation='My Donations'
       notifications='Notifications'
       changePassword='Change Password'
       likes='Likes'
