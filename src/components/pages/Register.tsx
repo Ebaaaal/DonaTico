@@ -63,7 +63,7 @@ export default function Register(props: RegisterProps) {
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.confirmPassword}</label>
                     <div className='relative '>
-                        <p className='absolute left-0 bottom-3/2 text-red-600 animate-bounce max-md:text-sm '>{passwordMatch() ? '' : 'Password does not match'}</p>
+                        <p className='absolute right-10 min-md:right-50 min-md:bottom-9/8 bottom-7/6 text-xl text-red-600 animate-pulse max-md:text-xs '>{passwordMatch() ? '' : 'Password does not match'}</p>
                         <input
                             type={showPasswordConfirm ? "text" : "password"} className={`border-b-3 duration-400 hover:scale-110 outline-none mb-8 px-8 min-md:px-28 w-full min-md:mb-20`}
                             value={passConfirm}

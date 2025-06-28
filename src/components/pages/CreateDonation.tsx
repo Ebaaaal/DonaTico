@@ -83,7 +83,6 @@ export default function CreateDonation(props: CreateDonationProps) {
                 const target = e.target as HTMLInputElement;// Remove non-numeric characters
                 target.value = target.value.replace(/[^0-9]/g, ''); //hecho con chatgpt, promp: como puedo hacer para que el input solo acepte numeros, sin puntos y que tampoco acepte la e?
                 if (target.value === '') return setMoney(true);
-                
                 setMoney(false);
               }}
             />
