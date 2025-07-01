@@ -22,12 +22,14 @@ interface SectionProps {
 }
 
 interface TargetsProps {
+    images: string[];
+    alts: string[];
     titles: string[];
     organizers: string[];
     texts: string[];
+    locations: string[];
     progress: number[];
-    images: string[];
-    alts: string[];
+    
 }
 
 interface ContainerProps {

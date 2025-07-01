@@ -27,7 +27,7 @@ function RouteComponent() {
 
       title="Payment Details"
       donation="amount to donate"
-      amount={[1000, 2000, 5000, 10000, 20000]}
+      amount={[1000, 2000, 5000, 10000, 20000, 50000, 100000, 250000]}
       textTitleInfo="Aporte de las donaciones para los creadores de Donaticos"
       textInfo="En Donaticos, las donaciones son completamente voluntarias y se destinan únicamente a las campañas elegidas por los usuarios. Ningún miembro del equipo obtiene beneficio económico, ya que nuestro propósito es facilitar la ayuda directa sin fines de lucro, respetando siempre la voluntad del donante."
 
@@ -36,7 +36,7 @@ function RouteComponent() {
       methodMastercard="Mastercard"
       methodOther="Other"
       cardNumber="Card Number"
-      cardHolder="Card Holder Name"
+      cardHolder="Card Holder Name"  
       expiration="Expiration date"
       security="Security code"
       saveCard="Save this card"

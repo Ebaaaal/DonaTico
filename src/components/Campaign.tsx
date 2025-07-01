@@ -1,20 +1,24 @@
 
 interface CampaignProps {
   image: string;
+  location: string;
   organizer: string;
   heading: string;
+  progress: number;
   details: string;
   link: string;
-  progress: number;
 }
 
 export default function Campaign(props: CampaignProps) {
   console.log("Progreso recibido:", props.progress);
 
   return (
-    <div className="border-1 border-gray-300 rounded-2xl p-5">
-      <img src={props.image} alt="campaign" className="rounded-xl mb-2 w-full " />
-      <p className="text-xs text-center text-gray-500">{props.organizer}</p>
+    <div className="border-1 border-gray-300 rounded-2xl p-5 hover:bg-lime-50  duration-300 cursor-default">
+      <div className="relative overflow-hidden rounded-xl">
+        <img src={props.image} alt="campaign" className=" w-full transition duration-400 hover:scale-110 " />
+        <p className="absolute bottom-4 right-4 bg-neutral-200 opacity-70 rounded-full py-1 px-4 text-xs text-center text-black">{props.location}</p>
+      </div>
+      <p className="text-xs text-center mt-3 text-gray-500">{props.organizer}</p>
       <h3 className="text-center font-bold text-green-900">{props.heading}</h3>
 
 

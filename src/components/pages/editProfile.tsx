@@ -36,7 +36,7 @@ export default function EditProfile(props: editProfileProps) {
                 </div>
                 <h1 className="text-4xl font-bold min-md:text-6xl mb-15">{props.title}</h1>
 
-                <form className="flex flex-col gap-1 w-full min-md:gap-3 min-md:text-3xl" method='POST'>
+                <form className="flex flex-col gap-1 w-full min-md:gap-3 min-md:text-3xl" method='PUT'>
 
                     <label className="font-semibold relative left-1/6 min-md:font-medium">{props.name}</label>
                     <input type="name" className=" border-b-3 mb-8 outline-none hover:scale-105 duration-300 px-8 min-md:px-28 min-md:mb-15" />

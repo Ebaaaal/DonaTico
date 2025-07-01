@@ -3,6 +3,9 @@ import { createFileRoute } from '@tanstack/react-router'
 import Container from '../components/Container'
 import Button from '../components/Button'
 
+import { useQuery } from '@tanstack/react-query'
+
+
 const btnHeader = (
   <Button text='>'
     style='text-white text-2xl font-bold text-center bg-green-800 duration-400 cursor-pointer hover:scale-110 hover:bg-green-950 rounded-full py-4 px-6 max-[30rem]:py-1 max-[30rem]:px-3 max-[30rem]:text-md max-[30rem]:font-extralight'
@@ -25,12 +28,13 @@ const sectionProps = {
 }
 
 const targetsProps = {
+  images: ['desastres.svg', 'caridad.svg'],
+  alts: ['desastres', 'caridad'],
   titles: ['Desastres Naturales', 'Caridad'],
   organizers: ['Ebal Seemann', 'Zoe Kraft'],
-  texts: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !'],
-  progress: [50, 100],
-  images: ['desastres.svg', 'caridad.svg'],
-  alts: ['desastres', 'caridad']
+  texts: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !'],
+  locations: ['jacobe', 'puerto'],
+  progress: [55, 100],
   
 }
 

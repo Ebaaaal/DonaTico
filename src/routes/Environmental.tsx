@@ -29,21 +29,24 @@ function EcologicalPage() {
   )
 
   const campaigns = [
-     {
+    {
       image: 'campaign-image.svg',
+      location: 'orotina',
       organizer: 'Red Cross',
       heading: 'Ayuda para inundaciones',
-      details: 'Apoyo a familias afectadas por lluvias fuertes.',
       progress: 45,
-     link: '/Details',
+      details: 'Apoyo a familias afectadas por lluvias fuertes.',
+      link: '/Details',
     },
-    {   image: 'campaign-image.svg',
-    organizer: 'Organizer 2',
-    heading: 'animal food',
-    details: 'Aenean commodo ligula eget dolor...',
-    progress: 23,
-    link: '/Details',
-  },
+    {
+      image: 'campaign-image.svg',
+      location: 'puerto rico',
+      organizer: 'Organizer 2',
+      heading: 'animal food',
+      details: 'Aenean commodo ligula eget dolor...',
+      progress: 23,
+      link: '/Details',
+    },
   ]
 
   return (
@@ -61,8 +64,8 @@ function EcologicalPage() {
           <div className="bg-white w-11/12 max-w-md p-6 rounded-lg shadow-lg border border-green-400 text-green-800 relative">
             <h2 className="text-lg font-bold mb-2">¿Qué significa esta categoría?</h2>
             <p className="text-sm">
-           Esta categoría reúne campañas enfocadas en la protección del medio ambiente y la sostenibilidad.
-Incluyen:
+              Esta categoría reúne campañas enfocadas en la protección del medio ambiente y la sostenibilidad.
+              Incluyen:
 
             </p>
             <ul className="list-disc list-inside text-sm mt-5 flex flex-col gap-3">

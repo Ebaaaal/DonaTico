@@ -3,11 +3,12 @@ import Campaign from '../Campaign';
 
 interface CampaignProps {
   image: string;
+  location: string;
   organizer: string;
   heading: string;
+  progress: number;
   details: string;
   link: string;
-  progress: number;
 }
 
 interface CategoryProps {
@@ -16,7 +17,7 @@ interface CategoryProps {
   title: string;
   searchPlaceholder: string;
   campaign: CampaignProps[];
-  
+
 }
 
 export default function Category(props: CategoryProps) {
@@ -45,6 +46,7 @@ export default function Category(props: CategoryProps) {
               <Campaign
                 key={index}
                 image={campaign.image}
+                location={campaign.location}
                 organizer={campaign.organizer}
                 heading={campaign.heading}
                 progress={campaign.progress}
