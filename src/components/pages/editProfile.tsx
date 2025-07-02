@@ -19,9 +19,7 @@ export default function EditProfile(props: editProfileProps) {
     const [size, setSize] = useState(0);
     const [name, setName] = useState('');
 
-    console.log(size);
-    console.log(name);
-
+  
 
     return (
         <section className='flex flex-col justify-center items-center min-h-dvh gap-6 min-md:my-25'>

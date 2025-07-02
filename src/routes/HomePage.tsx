@@ -35,7 +35,7 @@ const targetsProps = {
   texts: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit!', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor !'],
   locations: ['jacobe', 'puerto'],
   progress: [55, 100],
-  
+
 }
 
 export const Route = createFileRoute('/HomePage')({
@@ -43,7 +43,22 @@ export const Route = createFileRoute('/HomePage')({
 })
 
 function RouteComponent() {
+
+  const { data, isLoading, error } = useQuery({
+    queryKey: ['campaigns'],
+    queryFn: async () => {
+      const response = await fetch('http://donatico_backend.test/api/v1/donations/allDonations')
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+      return response.json()
+    },
+  });
+
+  if (isLoading) return <div>Loading...</div>
+  if (error) return <div>Error: {error.message}</div>
+
   return (
-    <Container header={headerProps} section={sectionProps}  targets={targetsProps}  ></Container>
+    <Container header={headerProps} section={sectionProps} targets={targetsProps} values={data}  ></Container>
   )
 }

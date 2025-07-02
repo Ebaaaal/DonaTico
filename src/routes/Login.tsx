@@ -11,8 +11,7 @@ export const Route = createFileRoute('/Login')({
 
 function ButtonPasswordReveal({ showPassword, setShowPassword }: any) {
   const img = showPassword ? 'ojoabierto.svg' : 'ojociego.svg';
-  console.log(img)
-  console.log(showPassword)
+  
   return (
     <Button text=''
       style={`absolute right-6 bottom-2/3  bg-no-repeat hover:scale-120 duration-200 bg-center w-6 h-6 `} //uso de windsurf para obtener una idea pero se modifico hasta dejarlo asi de una forma mas simplificada
