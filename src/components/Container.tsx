@@ -1,58 +1,85 @@
-import Header from './Header'
-import Section from './Section'
-import Targets from './Targets'
+import type { Container } from 'react-dom/client';
+import Header from './Header.tsx';
+import Section from './Section.tsx';
+import Targets from './Targets.tsx';
 
-const cards = [
-  {
-    title: 'DonáTico',
-    img: 'guaria.svg',
-    alt: 'guaria',
-    text: '¡Ayuda a tu patria!',
-  },
-  {
-    title: 'DonáTico',
-    img: 'mapacr.svg',
-    alt: 'mapa de Costa Rica',
-    text: 'Unete a la causa!',
-  },
-]
+import typeReact, { useState } from 'react'
+
+interface HeaderProps {
+    title: string;
+    img: string;
+    alt: string;
+    text: string;
+    button?: typeReact.ReactNode;
+}
 
 interface SectionProps {
-  images: string[]
-  images2: string[]
-  links: string[]
-  links2: string[]
+    images: string[];
+    images2: string[];
+    links: string[];
+    links2: string[];
 }
 
 interface TargetsProps {
-  images: string[]
-  alts: string[]
-  titles: string[]
-  organizers: string[]
-  texts: string[]
-  locations: string[]
-  progress: number[]
+    images: string[];
+    alts: string[];
+    titles: string[];
+    organizers: string[];
+    texts: string[];
+    locations: string[];
+    progress: number[];
+
+}
+
+interface Campaign {
+    image: string;
+    location: string;
+    organizer: string;
+    heading: string;
+    progress: number;
+    details: string;
+    link: string;
 }
 
 interface ContainerProps {
-  section: SectionProps
-  targets: TargetsProps
+    header?: HeaderProps;
+    section?: SectionProps;
+    targets?: TargetsProps;
+    values?: Campaign[];
 }
 
+
 export default function Container(props: ContainerProps) {
-  return (
-    <div className="flex flex-col justify-center items-center w-full px-4">
-      <Header cards={cards} />
+    if (!props.header) return null;
+    if (!props.section) return null;
+    if (!props.targets) return null;
 
-      <h2 className="font-fredoka text-3xl font-semibold mt-16 mb-6 cursor-default">
-        Donation Options
-      </h2>
-      <Section {...props.section} />
 
-      <h2 className="font-fredoka text-3xl font-semibold mt-16 mb-6 cursor-default">
-        Latest Campaings
-      </h2>
-      <Targets {...props.targets} />
-    </div>
-  )
+    //  
+    console.log(props.values);
+
+    //para imagenes
+    const api_imagesSaves = "http://donatico_backend.test/storage/"; //url de la carpeta donde se guardan las imagenes
+
+    const images = Array.isArray(props.values) ? props.values.map(campaign => ${api_imagesSaves}${campaign.image}) : []; //busca la imagen en la api con la url de las carpetas
+
+    console.log(images);
+    //
+
+    const [selected, setSelected] = useState(images[0]);
+
+    return (
+
+        <div className="flex flex-col justify-center items-center w-full">
+            <Header {...props.header}> </Header>
+
+            <h2 className="font-fredoka text-3xl font-semibold mt-20 -mb-15 cursor-default">Donation Options</h2>
+            <Section {...props.section}> </Section>
+
+
+            <h2 className="font-fredoka text-3xl font-semibold mt-20 -mb-15 cursor-default">Latest Campaings</h2>
+            <Targets {...props.targets} images={images} /> 
+        </div>
+
+    )
 }
