@@ -1,63 +1,58 @@
+import Header from './Header'
+import Section from './Section'
+import Targets from './Targets'
 
-import type { Container } from 'react-dom/client';
-import Header from './Header.tsx';
-import Section from './Section.tsx';
-import Targets from './Targets.tsx';
-
-import typeReact from 'react'
-
-interface HeaderProps {
-    title: string;
-    img: string;
-    alt: string;
-    text: string;
-    button?: typeReact.ReactNode;
-}
+const cards = [
+  {
+    title: 'DonáTico',
+    img: 'guaria.svg',
+    alt: 'guaria',
+    text: '¡Ayuda a tu patria!',
+  },
+  {
+    title: 'DonáTico',
+    img: 'mapacr.svg',
+    alt: 'mapa de Costa Rica',
+    text: 'Unete a la causa!',
+  },
+]
 
 interface SectionProps {
-    images: string[];
-    images2: string[];
-    links: string[];
-    links2: string[];
+  images: string[]
+  images2: string[]
+  links: string[]
+  links2: string[]
 }
 
 interface TargetsProps {
-    images: string[];
-    alts: string[];
-    titles: string[];
-    organizers: string[];
-    texts: string[];
-    locations: string[];
-    progress: number[];
-    
+  images: string[]
+  alts: string[]
+  titles: string[]
+  organizers: string[]
+  texts: string[]
+  locations: string[]
+  progress: number[]
 }
 
 interface ContainerProps {
-    header?: HeaderProps;
-    section?: SectionProps;
-    targets?: TargetsProps;
+  section: SectionProps
+  targets: TargetsProps
 }
 
-
 export default function Container(props: ContainerProps) {
-    if (!props.header) return null;
-    if (!props.section) return null;
-    if (!props.targets) return null;
+  return (
+    <div className="flex flex-col justify-center items-center w-full px-4">
+      <Header cards={cards} />
 
+      <h2 className="font-fredoka text-3xl font-semibold mt-16 mb-6 cursor-default">
+        Donation Options
+      </h2>
+      <Section {...props.section} />
 
-
-    return (
-
-        <div className="flex flex-col justify-center items-center w-full">
-            <Header {...props.header}> </Header>
-
-            <h2 className="font-fredoka text-3xl font-semibold mt-20 -mb-15 cursor-default">Donation Options</h2>
-            <Section {...props.section}> </Section>
-            
-            
-            <h2 className="font-fredoka text-3xl font-semibold mt-20 -mb-15 cursor-default">Latest Campaings</h2>
-            <Targets {...props.targets}> </Targets>
-        </div>
-
-    )
+      <h2 className="font-fredoka text-3xl font-semibold mt-16 mb-6 cursor-default">
+        Latest Campaings
+      </h2>
+      <Targets {...props.targets} />
+    </div>
+  )
 }
