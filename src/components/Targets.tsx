@@ -9,7 +9,7 @@ interface TargetsProps {
 
 export default function Targets(props: TargetsProps) {
     return (
-        <section className="flex flex-col w-10/11 my-20 gap-10  ">
+        <section className="flex flex-col w-10/11 my-20 gap-10 mb-25">
 
             {props.organizers.map((organizer, number) => (
                 <div className="flex border-1 items-center border-gray-300 rounded-2xl gap-8  ">

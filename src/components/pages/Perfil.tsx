@@ -25,7 +25,7 @@ export default function CreateDonation(props: PerfilProps) {
     <section className=''>
       <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 font-fredoka min-md:my-25 ">
         <div className="flex justify-center items-center w-full pb-10">
-          <h1 className="flex justify-center items-center mr-8 gap-x-5 text-3xl font-regular min-md:text-3xl text-black">
+          <h1 className="flex justify-center items-center mr-18 gap-x-15 text-3xl font-regular min-md:text-3xl text-black">
             {props.btnBack}
             {props.title}
           </h1>
@@ -38,22 +38,22 @@ export default function CreateDonation(props: PerfilProps) {
 
         <div className="flex flex-col gap-5 pt-5 w-4/7">
           <Link to="/CreateDonation" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
-            <img src="heart.svg" alt="Donation" className="w-15 h-15 text-green-800" />
+            <img src="heart.svg" alt="Donation" className="w-12 h-12 text-green-800" />
             <h3 className="text-lg">{props.donation}</h3>
           </Link>
 
           <Link to='/Notifications' className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
-            <img src="belll.svg" alt="Notifications" className="w-15 h-15 text-green-800" />
+            <img src="belll.svg" alt="Notifications" className="w-12 h-12 text-green-800" />
             <h3 className="text-lg">{props.notifications}</h3>
           </Link>
 
           <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
-            <img src="key2.svg" alt="Change Password" className="w-15 h-15 text-green-800" />
+            <img src="key2.svg" alt="Change Password" className="w-10 h-11 text-green-800" />
             <h3 className="text-lg">{props.changePassword}</h3>
           </Link>    
 
-          <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer">
-            <img src="LogOut.svg" alt="Settings" className="w-15 h-15 text-green-800" />
+          <Link to="/" className="flex items-center gap-4 hover:scale-105 duration-300 cursor-pointer pl-1">
+            <img src="LogOut.svg" alt="Settings" className="w-11 h-10 text-green-800 " />
             <h3 className="text-lg">{props.logOut}</h3>
           </Link>
         </div>

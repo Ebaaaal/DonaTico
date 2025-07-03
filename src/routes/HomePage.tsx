@@ -13,11 +13,24 @@ const btnHeader = (
 
 )
 const headerProps = {
-  title: 'DonáTico',
-  img: 'perezoso.svg',
-  alt: 'perezoso',
-  text: 'Ayuda a tu patria!',
-  button: btnHeader
+  card1: {
+    title: 'DonáTico',
+    img: 'guaria.svg',
+    alt: 'guaria',
+    text: '¡Ayuda a tu patria!',
+  },
+  card2: {
+    title: 'DonáTico',
+    img: 'mapacr.svg',
+    alt: 'mapa de Costa Rica',
+    text: 'Únete a la causa!',
+  },
+  card3: {
+    title: 'DonáTico',
+    img: 'carreta.png',
+    alt: 'carreta',
+    text: '¡Costa Rica nos necesita!',
+  },
 }
 
 const sectionProps = {
@@ -47,7 +60,7 @@ function RouteComponent() {
   const { data, isLoading, error } = useQuery({
     queryKey: ['campaigns'],
     queryFn: async () => {
-      const response = await fetch('http://donatico_backend.test/api/v1/donations/allDonations')
+      const response = await fetch('http://donatico.test/api/v1/donations/allDonations')
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }
@@ -59,6 +72,15 @@ function RouteComponent() {
   if (error) return <div>Error: {error.message}</div>
 
   return (
-    <Container header={headerProps} section={sectionProps} targets={targetsProps} values={data}  ></Container>
+   <Container
+  header={{
+    card1: headerProps.card1,
+    card2: headerProps.card2,
+    card3: headerProps.card3
+  }}
+  section={sectionProps}
+  targets={targetsProps}
+  values={data}
+/>
   )
 }

@@ -23,7 +23,7 @@ export default function CreateDonation(props: CreateDonationProps) {
   const [money, setMoney] = useState(true);
 
   return (
-    <section>
+    <section className="pb-10">
       <div className="flex flex-col justify-center items-center min-h-dvh text-green-900 gap-10 font-fredoka min-md:gap-20 min-md:pb-35 min-md:pt-15">
         <div className="flex justify-center items-center w-full">
           <h1 className="flex justify-center items-center mr-8 gap-x-5 text-3xl font-regular min-md:text-3xl text-black">
