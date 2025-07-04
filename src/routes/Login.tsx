@@ -27,16 +27,15 @@ function RouteComponent() {
   const { data, isLoading, error } = useQuery({
     queryKey: ['users'],
     queryFn: async () => {
-      const response = await fetch('http://donatico.test/api/v1/users/allUsers');
+      const response = await fetch('http://donatico_backend.test/api/v1/users/allUsers');
       if (!response.ok) throw new Error('Network response was not ok');
       return response.json();
     },
   });
 
-  console.log(data);
   const handleLogin = async (email: string, password: string) => {
   try {
-    const res = await fetch('http://donatico.test/api/login', {
+    const res = await fetch('http://donatico_backend.test/api/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),

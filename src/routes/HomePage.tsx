@@ -8,7 +8,7 @@ import { useQuery } from '@tanstack/react-query'
 
 const btnHeader = (
   <Button text='>'
-    style='text-white text-2xl font-bold text-center bg-green-800 duration-400 cursor-pointer hover:scale-110 hover:bg-green-950 rounded-full py-4 px-6 max-[30rem]:py-1 max-[30rem]:px-3 max-[30rem]:text-md max-[30rem]:font-extralight'
+    style='text-white text-2xl font-bold text-center bg-green-800 duration-400 cursor-pointer  hover:scale-110 hover:bg-green-950 rounded-full py-4 px-6 max-[30rem]:py-1 max-[30rem]:px-3 max-[30rem]:text-md max-[30rem]:font-extralight'
     link='/Login' />
 
 )
@@ -60,7 +60,7 @@ function RouteComponent() {
   const { data, isLoading, error } = useQuery({
     queryKey: ['campaigns'],
     queryFn: async () => {
-      const response = await fetch('http://donatico.test/api/v1/donations/allDonations')
+      const response = await fetch('http://donatico_backend.test/api/v1/donations/allDonations')
       if (!response.ok) {
         throw new Error('Network response was not ok')
       }
